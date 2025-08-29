@@ -1,0 +1,20 @@
+﻿namespace ListWatch.Models
+{
+    public class WatchListItems
+    {
+        public int Id { get; set; }
+        public string Title { get; set; } = "";
+        public string ItemType { get; set; } = "";
+        public string Genre { get; set; } = "";
+        public int ReleaseYear { get; set; }
+        public string Status { get; set; } = "";
+        public int? Rating { get; set; }
+        public bool IsFavorite { get; set; }
+
+
+        public int UserId { get; set; } //FK
+        public User? User { get; set; }
+
+        public WatchProgress WatchProgress { get; set; }
+    }
+}

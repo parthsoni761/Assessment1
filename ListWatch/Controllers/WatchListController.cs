@@ -1,0 +1,67 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using ListWatch.Services;
+using ListWatch.DTOs;
+using ListWatch.Models;
+using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+
+namespace ListWatch.Controllers
+{
+    [ApiController]
+    [Route("api/WatchListItems")]
+    [Authorize]
+    public class WatchListController : ControllerBase
+    {
+        private readonly IWatchListService _Service;
+        private readonly IMapper _mapper;
+        public WatchListController(IWatchListService Service, IMapper mapper)
+        {
+            _Service = Service;
+            _mapper = mapper;
+        }
+
+        // get:- api/WatchListItems
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<WatchListItemDto>>> GetAllAsync()
+        {
+            var items = await _Service.GetAllAsync();
+            return Ok(items);
+        }
+
+        // get:- api/WatchListItems/1
+        [HttpGet("{id}")]
+        public async Task<ActionResult<WatchListItemDto>> GetByIdAsync(int id)
+        {
+            var item = await _Service.GetByIdAsync(id);
+            if (item == null) return NotFound();
+            return Ok(item);
+        }
+
+        // post:- api/WatchListItems
+        [HttpPost]
+        public async Task<ActionResult<WatchListItemDto>> CreateAsync(CreateWatchListItemDto dto)
+        {
+            var createdItem = await _Service.CreateAsync(dto);
+            return Ok(createdItem);
+        }
+
+        // put:- api/WatchListItems/1
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateWatchListItemDto dto)
+        {
+            var updated = await _Service.UpdateAsync(id, dto);
+            if (!updated) return NotFound();
+
+            return NoContent();
+        }
+
+        // delete:- api/WatchListItems/1
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteAsync(int id)
+        {
+            var deleted = await _Service.DeleteAsync(id);
+            if (!deleted) return NotFound();
+            return NoContent();
+        }
+    }
+}

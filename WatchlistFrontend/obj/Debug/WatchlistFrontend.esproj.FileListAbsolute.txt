@@ -1,0 +1,1 @@
+D:\training-mvc\Assessment\WatchlistFrontend\obj\Debug\WatchlistFrontend.esproj.CoreCompileInputs.cache
