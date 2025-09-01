@@ -5188,23 +5188,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ParthSoni\\.nuget\\packages\\": {},
+    "C:\\Users\\Parth\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\ListWatch.csproj",
+      "projectUniqueName": "D:\\new_prac\\latest-edition\\Assessment1\\ListWatch\\ListWatch.csproj",
       "projectName": "ListWatch",
-      "projectPath": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\ListWatch.csproj",
-      "packagesPath": "C:\\Users\\ParthSoni\\.nuget\\packages\\",
-      "outputPath": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\obj\\",
+      "projectPath": "D:\\new_prac\\latest-edition\\Assessment1\\ListWatch\\ListWatch.csproj",
+      "packagesPath": "C:\\Users\\Parth\\.nuget\\packages\\",
+      "outputPath": "D:\\new_prac\\latest-edition\\Assessment1\\ListWatch\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ParthSoni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Parth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

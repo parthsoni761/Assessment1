@@ -1,27 +1,16 @@
-<header class="navbar-container">
-  <div class="navbar-content">
-    <!-- You can add a search bar or other elements here in the future -->
-    <div class="spacer"></div>
+<mat-toolbar color="primary" class="navbar-toolbar">
+  <div class="spacer"></div>
 
-    <div class="user-profile">
-      <button class="profile-button" (click)="toggleDropdown()">
-        <div class="user-icon">
-          <!-- A simple initial-based icon -->
-          <span>{{ username ? username.charAt(0).toUpperCase() : 'U' }}</span>
-        </div>
-        <span class="username">{{ username || 'User' }}</span>
-        <!-- Arrow icon for dropdown -->
-        <span class="arrow" [class.up]="isDropdownVisible">▼</span>
-      </button>
+  <button mat-button [matMenuTriggerFor]="userMenu">
+    <mat-icon>account_circle</mat-icon>
+    <span class="username">{{ username || 'User' }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
 
-      <!-- Dropdown Menu -->
-      <div class="dropdown-menu" *ngIf="isDropdownVisible">
-        <ul>
-          <li>
-            <a (click)="logout()">🔒 Logout</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

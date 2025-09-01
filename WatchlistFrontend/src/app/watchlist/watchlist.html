@@ -1,161 +1,80 @@
 <div class="watchlist-container">
   <header>
     <h1>My Watchlist</h1>
-    <button class="add-btn" (click)="openAddModal()">+ Add New </button>
+    <button mat-flat-button color="primary" (click)="openAddModal()">
+      <mat-icon>add</mat-icon>
+      Add New Item
+    </button>
   </header>
 
-  <!-- Filters Section -->
-  <div class="filters-panel card" >
-    <h3>Filters</h3>
-    <div class="filter-controls"  >
-      <input type="text"  placeholder="Search by title..." [(ngModel)]="filters.search" (keyup.enter)="loadWatchlist()" />
-      <select [(ngModel)]="filters.status" (ngModelChange)="loadWatchlist()">
-        <option value="">All Status</option>
-        <option value="Completed">Completed</option>
-        <option value="Watching">Watching</option>
-        <option value="To Watch">To Watch</option>
-      </select>
-      <select [(ngModel)]="filters.type" (ngModelChange)="loadWatchlist()">
-        <option value="">All Types</option>
-        <option value="Movie">Movie</option>
-        <option value="TV Show">TV Show</option>
-      </select>
-      <select [(ngModel)]="filters.sortBy" (ngModelChange)="loadWatchlist()">
-        <option value="">Sort by</option>
-        <option value="rating">Sort by Rating</option>
-        <option value="releaseYear">Sort by Year</option>
-      </select>
-      <button class="sort-toggle-btn" (click)="toggleTitleSort()">
-        Sort by Title
-        <!-- Show an up or down arrow based on the current sort direction -->
-        <span *ngIf="filters.sortBy.includes('title')">
-          {{ isTitleSortAscending ? '↑' : '↓' }}
-        </span>
-      </button>
-    </div>
-    <!--<button (click)="loadWatchlist()">Apply Filters</button>-->
+  <div class="filters-panel">
+    <mat-form-field appearance="outline">
+      <mat-label>Search by title</mat-label>
+      <input matInput [(ngModel)]="filters.search" (keyup.enter)="loadWatchlist()">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select [(ngModel)]="filters.status" (selectionChange)="loadWatchlist()">
+        <mat-option value="">All Statuses</mat-option>
+        <mat-option value="Completed">Completed</mat-option>
+        <mat-option value="Watching">Watching</mat-option>
+        <mat-option value="To Watch">To Watch</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <mat-select [(ngModel)]="filters.type" (selectionChange)="loadWatchlist()">
+        <mat-option value="">All Types</mat-option>
+        <mat-option value="Movie">Movie</mat-option>
+        <mat-option value="TV Show">TV Show</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
-
-  <div *ngIf="isLoading" class="loading">
-    <p>Loading your watchlist...</p>
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
   </div>
 
-  <div *ngIf="!isLoading && watchlist.length === 0" class="empty-state card">
-    <p>Your watchlist is empty. Click "Add New" to get started!</p>
-  </div>
+  <div class="table-container mat-elevation-z8" *ngIf="!isLoading">
+    <table mat-table [dataSource]="dataSource" matSort>
 
-  <div class="table-container" *ngIf="!isLoading && watchlist.length > 0">
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Type</th>
-          <th>Genre</th>
-          <th>Year</th>
-          <th>Status</th>
-          <th>Progress</th>
-          <th>Rating</th>
-          <th>Favorite</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of watchlist">
-          <td data-label="Title">{{ item.title }}</td>
-          <td data-label="Type">{{ item.itemType }}</td>
-          <td data-label="Genre">{{ item.genre }}</td>
-          <td data-label="Year">{{ item.releaseYear }}</td>
-          <td data-label="Status">{{ item.status }}</td>
-          <td data-label="Progress">
-            <span *ngIf="item.itemType === 'TV Show'">
-              {{ item.completedEpisodes || 0 }} / {{ item.totalEpisodes || '?' }}
-            </span>
-            <span *ngIf="item.itemType !== 'TV Show'">N/A</span>
-          </td>
-          <td data-label="Rating">{{ item.rating > 0 ? (item.rating + ' / 10') : 'N/A' }}</td>
-          <td data-label="Favorite">{{ item.isFavorite ? '⭐' : '—' }}</td>
-          <td data-label="Actions" class="actions">
-            <button class="edit-btn" (click)="openEditModal(item)">Edit</button>
-            <button class="delete-btn" (click)="onDeleteItem(item.id)">Delete</button>
-          </td>
-        </tr>
-      </tbody>
+      <ng-container matColumnDef="isFavorite">
+        <th mat-header-cell *matHeaderCellDef> Fav </th>
+        <td mat-cell *matCellDef="let item">
+          <button mat-icon-button color="accent" (click)="onToggleFavorite(item)" [title]="item.isFavorite ? 'Remove from favorites' : 'Add to favorites'">
+            <mat-icon>{{ item.isFavorite ? 'star' : 'star_border' }}</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let item"> {{item.title}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="itemType"><th mat-header-cell *matHeaderCellDef> Type </th><td mat-cell *matCellDef="let item"> {{item.itemType}} </td></ng-container>
+      <ng-container matColumnDef="genre"><th mat-header-cell *matHeaderCellDef> Genre </th><td mat-cell *matCellDef="let item"> {{item.genre}} </td></ng-container>
+      <ng-container matColumnDef="releaseYear"><th mat-header-cell *matHeaderCellDef mat-sort-header> Year </th><td mat-cell *matCellDef="let item"> {{item.releaseYear}} </td></ng-container>
+      <ng-container matColumnDef="status"><th mat-header-cell *matHeaderCellDef> Status </th><td mat-cell *matCellDef="let item"> {{item.status}} </td></ng-container>
+
+      <ng-container matColumnDef="rating">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Rating </th>
+        <td mat-cell *matCellDef="let item"> {{ item.rating > 0 ? (item.rating + ' / 10') : 'N/A' }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let item">
+          <button mat-stroked-button color="primary" (click)="openEditModal(item)">Edit</button>
+          <button mat-stroked-button color="warn" (click)="onDeleteItem(item.id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="9">No data matching your search or filters.</td>
+      </tr>
     </table>
-  </div>
-</div>
-
-<!-- Add/Edit Modal -->
-<div class="modal-backdrop" *ngIf="isModalVisible" (click)="closeModal()">
-  <div class="modal-content" (click)="$event.stopPropagation()">
-    <header class="modal-header">
-      <h2>{{ isEditing ? 'Edit Item' : 'Add New ' }}</h2>
-      <button class="close-btn" (click)="closeModal()">&times;</button>
-    </header>
-    <form (ngSubmit)="saveItem()" *ngIf="formModel">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input id="title" type="text" [(ngModel)]="formModel.title" name="title" required>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="itemType">Type</label>
-          <select id="itemType" [(ngModel)]="formModel.itemType" name="itemType">
-            <option value="Movie">Movie</option>
-            <option value="TV Show">TV Show</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="status">Status</label>
-          <select id="status" [(ngModel)]="formModel.status" name="status">
-            <option>To Watch</option>
-            <option>Watching</option>
-            <option>Completed</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-row" *ngIf="formModel.itemType === 'TV Show'">
-        <div class="form-group">
-          <label for="completedEpisodes">Completed Episodes</label>
-          <input id="completedEpisodes" type="number" [(ngModel)]="formModel.completedEpisodes" name="completedEpisodes">
-        </div>
-        <div class="form-group">
-          <label for="totalEpisodes">Total Episodes</label>
-          <input id="totalEpisodes" type="number" [(ngModel)]="formModel.totalEpisodes" name="totalEpisodes">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label for="genre">Genre</label>
-          <input id="genre" type="text" [(ngModel)]="formModel.genre" name="genre">
-        </div>
-        <div class="form-group">
-          <label for="releaseYear">Year</label>
-          <input id="releaseYear" type="number" [(ngModel)]="formModel.releaseYear" name="releaseYear">
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="rating">Your Rating (0-10)</label>
-        <input id="rating" type="number"  [(ngModel)]="formModel.rating"  #rating="ngModel"
-    min="0"
-    max="10"
-    pattern="[0-9]*"
-    required name="rating" >
-      </div>
-
-      <div class="form-group-checkbox">
-        <input id="isFavorite" type="checkbox" [(ngModel)]="formModel.isFavorite" name="isFavorite">
-        <label for="isFavorite">Mark as Favorite</label>
-      </div>
-
-      <footer class="modal-footer">
-        <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
-        <button type="submit" class="save-btn">Save</button>
-      </footer>
-    </form>
   </div>
 </div>

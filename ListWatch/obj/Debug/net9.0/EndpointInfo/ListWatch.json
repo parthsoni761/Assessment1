@@ -313,7 +313,14 @@
             }
           },
           {
-            "name": "sortBy",
+            "name": "sortColumn",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortDirection",
             "in": "query",
             "schema": {
               "type": "string"
@@ -358,6 +365,7 @@
         "tags": [
           "WatchList"
         ],
+        "operationId": "GetWatchlistItemById",
         "parameters": [
           {
             "name": "id",
@@ -433,6 +441,29 @@
         }
       },
       "delete": {
+        "tags": [
+          "WatchList"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/WatchListItems/{id}/toggleFavorite": {
+      "patch": {
         "tags": [
           "WatchList"
         ],

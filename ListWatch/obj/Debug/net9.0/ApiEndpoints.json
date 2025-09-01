@@ -199,7 +199,8 @@
         ],
         "StatusCode": 200
       }
-    ]
+    ],
+    "EndpointName": "GetWatchlistItemById"
   },
   {
     "ContainingType": "ListWatch.Controllers.WatchListController",
@@ -227,6 +228,22 @@
     "Method": "DeleteAsync",
     "RelativePath": "api/WatchListItems/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ListWatch.Controllers.WatchListController",
+    "Method": "ToggleFavorite",
+    "RelativePath": "api/WatchListItems/{id}/toggleFavorite",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -277,7 +294,12 @@
         "IsRequired": false
       },
       {
-        "Name": "sortBy",
+        "Name": "sortColumn",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortDirection",
         "Type": "System.String",
         "IsRequired": false
       }

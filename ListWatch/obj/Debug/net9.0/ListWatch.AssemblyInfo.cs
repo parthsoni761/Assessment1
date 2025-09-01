@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ListWatch")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f36401dec7d444f62b6f83523b03e7b504454aba")]
 [assembly: System.Reflection.AssemblyProductAttribute("ListWatch")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ListWatch")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

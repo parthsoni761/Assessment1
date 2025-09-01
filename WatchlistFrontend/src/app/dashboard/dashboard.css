@@ -1,39 +1,74 @@
-/* In src/app/dashboard/dashboard.css */
-
-:host {
-  display: block;
-  min-height: 100%; /* Ensure the component itself can grow */
-  background-color: #f4f7fa;
-}
-
 .dashboard-container {
-  max-width: 1400px; /* Increase max-width for larger screens */
-  margin: 0 auto;
-  padding: 30px; /* Add more padding for a spacious feel */
-  box-sizing: border-box; /* Include padding in height/width calculations */
+  padding: 24px;
 }
 
-/* ... All of your other styles for .card, .header, etc., remain the same ... */
-/* ... The responsive @media query also remains the same ... */
+header {
+  margin-bottom: 16px;
+}
 
-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-header h1 { color: #1a202c; }
-.logout-btn { background-color: #e53e3e; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; }
-.card { background: #fff; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 24px; margin-bottom: 20px; }
-.dashboard-grid { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
-.summary-cards { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-.summary-cards .card { text-align: center; }
-.summary-cards h4 { margin: 0 0 10px 0; color: #718096; font-weight: 500; text-transform: uppercase; font-size: 0.9em; }
-.summary-cards p { margin: 0; font-size: 2.25em; font-weight: 700; color: #2d3748; }
-.chart-container, .top-rated-container { min-height: 350px; grid-column: span 1; }
-.top-rated-container { grid-column: span 2; }
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: 12px 15px; border-bottom: 1px solid #e2e8f0; }
-th { background-color: #f7fafc; font-weight: 600; text-transform: uppercase; font-size: 0.85em; color: #4a5568; }
-tbody tr:hover { background-color: #edf2f7; }
-.loading { text-align: center; padding: 50px; font-size: 1.2em; color: #718096; }
+  header h1 {
+    margin: 0;
+  }
 
-@media (max-width: 768px) {
-  .dashboard-container { padding: 20px; }
-  .dashboard-grid, .summary-cards { grid-template-columns: 1fr; }
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.summary-card {
+  text-align: center;
+}
+
+  .summary-card p {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin: 16px 0 0 0;
+    color: #3f51b5;
+  }
+
+.chart-card {
+  grid-column: 1 / 3;
+}
+
+.top-rated-card {
+  grid-column: 3 / 5;
+}
+
+  .top-rated-card table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .top-rated-card th, .top-rated-card td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+@media (max-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chart-card, .top-rated-card {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card, .top-rated-card {
+    grid-column: auto;
+  }
 }

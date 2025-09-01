@@ -1,0 +1,65 @@
+<h1 mat-dialog-title>{{ isEditing ? 'Edit Item' : 'Add New Item' }}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="itemForm" (ngSubmit)="onSave()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required>
+      <mat-error *ngIf="itemForm.get('title')?.hasError('required')">Title is required.</mat-error>
+    </mat-form-field>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="itemType">
+          <mat-option value="Movie">Movie</mat-option>
+          <mat-option value="TV Show">TV Show</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option>To Watch</mat-option><mat-option>Watching</mat-option>
+          <mat-option>Completed</mat-option><mat-option>On Hold</mat-option>
+          <mat-option>Dropped</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="form-row" *ngIf="itemForm.get('itemType')?.value === 'TV Show'">
+      <mat-form-field appearance="outline">
+        <mat-label>Completed Episodes</mat-label>
+        <input matInput type="number" formControlName="completedEpisodes">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Total Episodes</mat-label>
+        <input matInput type="number" formControlName="totalEpisodes">
+      </mat-form-field>
+    </div>
+
+    <div class="form-row">
+      <mat-form-field appearance="outline">
+        <mat-label>Genre</mat-label>
+        <input matInput formControlName="genre">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Year</mat-label>
+        <input matInput type="number" formControlName="releaseYear">
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Your Rating (0-10)</mat-label>
+      <input matInput type="number" formControlName="rating" required>
+      <mat-error *ngIf="itemForm.get('rating')?.hasError('required')">Rating is required.</mat-error>
+      <mat-error *ngIf="itemForm.get('rating')?.hasError('min') || itemForm.get('rating')?.hasError('max')">
+        Rating must be a whole number between 0 and 10.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="isFavorite">Mark as Favorite</mat-checkbox>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-stroked-button (click)="onCancel()">Cancel</button>
+  <button mat-flat-button color="primary" (click)="onSave()" [disabled]="!itemForm.valid">Save</button>
+</div>

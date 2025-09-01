@@ -1,155 +1,102 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
 
 import { WatchlistService } from '../services/watchlist';
 import { AuthService } from '../services/auth';
-import { WatchlistItemDto, CreateWatchlistItemDto, UpdateWatchlistItemDto } from '../models/watchlist-item';
+import { WatchlistItemDto, CreateWatchlistItemDto } from '../models/watchlist-item';
+import { MaterialModule } from '../material.module';
+import { WatchlistDialogComponent } from '../watchlist-dialog/watchlist-dialog';
 
 @Component({
   selector: 'app-watchlist',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  // --- FIX: WatchlistDialogComponent is removed from this array ---
+  imports: [CommonModule, FormsModule, MaterialModule],
   templateUrl: './watchlist.html',
   styleUrls: ['./watchlist.css']
 })
-export class WatchlistComponent implements OnInit {
-  public watchlist: WatchlistItemDto[] = [];
+export class WatchlistComponent implements OnInit, AfterViewInit {
+  // ... the rest of your component logic remains exactly the same ...
+  public displayedColumns: string[] = ['isFavorite', 'title', 'itemType', 'genre', 'releaseYear', 'status', 'rating', 'actions'];
+  public dataSource = new MatTableDataSource<WatchlistItemDto>();
   public isLoading = true;
   public userId: string | null;
-
-  // State for the filter controls
-  public filters = {
-    status: '',
-    genre: '',
-    type: '',
-    isFavorite: '',
-    search: '',
-    sortBy: ''
-  };
-
-  public isTitleSortAscending = true;
-
-  // State for the Add/Edit modal
-  public isModalVisible = false;
-  public isEditing = false;
-  public formModel!: CreateWatchlistItemDto | UpdateWatchlistItemDto;
-  public editingItemId: number | null = null;
+  @ViewChild(MatSort) sort!: MatSort;
+  public filters = { status: '', type: '', search: '' };
 
   constructor(
     private watchlistService: WatchlistService,
-    private authService: AuthService
+    private authService: AuthService,
+    public dialog: MatDialog
   ) {
     this.userId = this.authService.getUserId();
   }
 
-  ngOnInit(): void {
-    this.loadWatchlist();
+  ngOnInit(): void { this.loadWatchlist(); }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.sort.sortChange.subscribe(() => this.loadWatchlist());
   }
-
-
-
-  toggleTitleSort(): void {
-    // 1. Flip the direction
-    this.isTitleSortAscending = !this.isTitleSortAscending;
-
-    // 2. Set the sortBy filter based on the new direction
-    this.filters.sortBy = this.isTitleSortAscending ? 'title_asc' : 'title_desc';
-
-    // 3. Reload the data from the server
-    this.loadWatchlist();
-  }
-
-
 
   loadWatchlist(): void {
-    if (!this.userId) {
-      console.error("User is not logged in!");
-      this.isLoading = false;
-      return;
-    }
+    if (!this.userId) return;
     this.isLoading = true;
-    this.watchlistService.getItemsByUserId(this.userId, this.filters).subscribe({
-      next: (data) => {
-        this.watchlist = data;
-        this.isLoading = false;
-      },
-      error: (err) => {
-        console.error("Failed to load watchlist", err);
-        this.isLoading = false;
+    const sortColumn = this.sort?.active || 'rating';
+    const sortDirection = this.sort?.direction || 'desc';
+    this.watchlistService.getItemsByUserId(this.userId, this.filters, sortColumn, sortDirection).subscribe({
+      next: (data) => { this.dataSource.data = data; this.isLoading = false; },
+      error: (err) => { console.error("Failed to load watchlist", err); this.isLoading = false; }
+    });
+  }
+
+  openAddModal(): void {
+    const dialogRef = this.dialog.open(WatchlistDialogComponent, {
+      width: '500px',
+      data: {
+        isEditing: false, item: {
+          userId: Number(this.userId), title: '', itemType: 'Movie', genre: '',
+          releaseYear: new Date().getFullYear(), status: 'To Watch', rating: 0, isFavorite: false,
+          completedEpisodes: 0, totalEpisodes: 0
+        } as CreateWatchlistItemDto
+      }
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.watchlistService.createItem(result).subscribe(() => this.loadWatchlist());
       }
     });
   }
 
-  // --- Modal and Form Logic ---
-
-  openAddModal(): void {
-    this.isEditing = false;
-    this.editingItemId = null;
-    this.formModel = {
-      userId: Number(this.userId),
-      title: '',
-      itemType: 'Movie',
-      genre: '',
-      releaseYear: new Date().getFullYear(),
-      status: 'To Watch',
-      rating: 0,
-      isFavorite: false,
-      completedEpisodes: 0,
-      totalEpisodes: 0
-    };
-    this.isModalVisible = true;
-  }
-
-  openEditModal(item: WatchlistItemDto): void {
-    this.isEditing = true;
-    this.editingItemId = item.id;
-    // Create a copy of the item to avoid mutating the table data directly
-    this.formModel = { ...item };
-    this.isModalVisible = true;
-  }
-
-  closeModal(): void {
-    this.isModalVisible = false;
-  }
-
-saveItem(): void {
-  if (!this.formModel) return;
-
-  if (this.isEditing && this.editingItemId) {
-    // Logic for updating an existing item
-    this.watchlistService.updateItem(this.editingItemId, this.formModel as UpdateWatchlistItemDto).subscribe({
-      next: () => {
-        // --- THIS IS THE FIX ---
-        // We must call our own method to reload the watchlist data.
-        this.loadWatchlist();
-        this.closeModal();
-      },
-      error: (err) => console.error("Failed to update item", err)
+  openEditModal(itemToEdit: WatchlistItemDto): void {
+    const dialogRef = this.dialog.open(WatchlistDialogComponent, {
+      width: '500px',
+      data: { isEditing: true, item: itemToEdit }
     });
-  } else {
-    // Logic for creating a new item
-    this.watchlistService.createItem(this.formModel as CreateWatchlistItemDto).subscribe({
-      next: () => {
-        // --- THIS IS THE FIX ---
-        // We must call our own method to reload the watchlist data.
-        this.loadWatchlist();
-        this.closeModal();
-      },
-      error: (err) => console.error("Failed to create item", err)
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.watchlistService.updateItem(itemToEdit.id, result).subscribe(() => this.loadWatchlist());
+      }
     });
   }
-} 
+
+  onToggleFavorite(item: WatchlistItemDto): void {
+    item.isFavorite = !item.isFavorite;
+    this.watchlistService.toggleFavorite(item.id).subscribe({
+      error: (err) => {
+        item.isFavorite = !item.isFavorite;
+        console.error("Failed to update favorite status", err);
+      }
+    });
+  }
 
   onDeleteItem(id: number): void {
-    if (confirm("Are you sure you want to delete this item? This action cannot be undone.")) {
-      this.watchlistService.deleteItem(id).subscribe({
-        next: () => {
-          // For a faster UI, remove the item from the local array instead of reloading
-          this.watchlist = this.watchlist.filter(item => item.id !== id);
-        },
-        error: (err) => console.error("Failed to delete item", err)
-      });
+    if (confirm("Are you sure?")) {
+      this.watchlistService.deleteItem(id).subscribe(() => this.loadWatchlist());
     }
   }
 }

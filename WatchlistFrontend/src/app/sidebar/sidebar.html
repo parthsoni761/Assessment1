@@ -2,23 +2,15 @@
   <div class="sidebar-header">
     <h3>ListWatch</h3>
   </div>
-  <nav class="sidebar-nav">
-    <ul>
-      <li>
-        <a routerLink="/dashboard" routerLinkActive="active-link">
-          <!-- Add an icon here later if you want -->
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/watchlist" routerLinkActive="active-link">
-          <span>Watchlist</span>
-        </a>
-      </li>
-      <!-- Add more links here as you build more pages -->
-    </ul>
-  </nav>
-  <div class="sidebar-footer">
-    <p>© 2025 ListWatch</p>
-  </div>
+
+  <mat-nav-list>
+    <a mat-list-item routerLink="/app/dashboard" routerLinkActive="active-link">
+      <mat-icon matListItemIcon>dashboard</mat-icon>
+      <span matListItemTitle>Dashboard</span>
+    </a>
+    <a mat-list-item routerLink="/app/watchlist" routerLinkActive="active-link">
+      <mat-icon matListItemIcon>list_alt</mat-icon>
+      <span matListItemTitle>Watchlist</span>
+    </a>
+  </mat-nav-list>
 </div>

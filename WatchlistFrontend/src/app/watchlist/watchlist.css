@@ -1,59 +1,55 @@
-/* In src/app/watchlist/watchlist.css */
-
-:host {
-  display: block;
-  min-height: 100%; /* Ensure the component itself can grow */
-  background-color: #f4f7fa;
-}
-
 .watchlist-container {
-  max-width: 1400px; /* Increase max-width */
-  margin: 0 auto;
-  padding: 30px; /* Add more padding */
-  box-sizing: border-box;
+  padding: 24px;
+  background-color: #fafafa;
 }
 
-/* ... All of your other styles for header, buttons, table, modal, etc., remain the same ... */
-/* ... The responsive @media query also remains the same ... */
-
-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
-header h1 { color: #1a202c; margin: 0; }
-.add-btn { background-color: #4299e1; color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: 600; }
-.card { background: #fff; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); padding: 24px; margin-bottom: 20px; }
-.filters-panel .filter-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 15px; }
-.filters-panel input, .filters-panel select { padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; font-size: 14px; }
-.filters-panel button { background-color: #48bb78; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
-.table-container { overflow-x: auto; }
-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); overflow: hidden; }
-th, td { text-align: left; padding: 16px; border-bottom: 1px solid #e2e8f0; vertical-align: middle; }
-th { background-color: #f7fafc; font-weight: 600; text-transform: uppercase; font-size: 0.8em; color: #4a5568; }
-td.actions { display: flex; gap: 10px; }
-.edit-btn { background-color: #ecc94b; color: #1a202c; }
-.delete-btn { background-color: #f56565; color: white; }
-.edit-btn, .delete-btn { border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: 500; }
-.loading, .empty-state { text-align: center; padding: 50px; font-size: 1.2em; color: #718096; }
-@media (max-width: 992px) {
-    table thead { display: none; }
-    table, table tbody, table tr, table td { display: block; width: 100%; }
-    table tr { margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    table td { text-align: right; padding-left: 50%; position: relative; border-bottom: 1px solid #e2e8f0; }
-    table td:last-child { border-bottom: none; }
-    table td::before { content: attr(data-label); position: absolute; left: 15px; width: calc(50% - 30px); text-align: left; font-weight: bold; color: #4a5568; }
-    td.actions { justify-content: flex-end; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
-/* Modal styles remain the same */
-.modal-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; align-items: center; justify-content: center; z-index: 1000; }
-.modal-content { background: white; border-radius: 12px; width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 5px 15px rgba(0,0,0,0.3); display: flex; flex-direction: column; }
-.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 20px; border-bottom: 1px solid #e2e8f0; }
-.modal-header h2 { margin: 0; font-size: 1.25em; }
-.close-btn { background: none; border: none; font-size: 24px; cursor: pointer; color: #718096; }
-form { padding: 20px; display: flex; flex-direction: column; gap: 15px; }
-.form-row { display: flex; gap: 15px; }
-.form-group { flex-grow: 1; display: flex; flex-direction: column; }
-.form-group label { margin-bottom: 5 px; font-weight: 600; font-size: 14px; }
-.form-group input, .form-group select { padding: 10px; border: 1px solid #cbd5e0; border-radius: 6px; }
-.form-group-checkbox { display: flex; align-items: center; gap: 10px; }
-.modal-footer { display: flex; justify-content: flex-end; gap: 10px; padding: 20px; border-top: 1px solid #e2e8f0; }
-.cancel-btn, .save-btn { padding: 10px 20px; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; }
-.cancel-btn { background-color: #e2e8f0; color: #2d3748; }
-.save-btn { background-color: #48bb78; color: white; }
+
+  header h1 {
+    margin: 0;
+  }
+
+.filters-panel {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+  .filters-panel mat-form-field {
+    flex: 1 1 200px;
+  }
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.table-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+td.mat-cell, th.mat-header-cell {
+  padding: 0 16px;
+}
+
+button[color="accent"] mat-icon {
+  color: #ffc107;
+}
+
+td button {
+  margin-right: 8px;
+}
+
+.mat-row .mat-cell {
+  text-align: center;
+  padding: 20px;
+}

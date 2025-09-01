@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChartConfiguration } from 'chart.js';
-import { BaseChartDirective } from 'ng2-charts'; // <-- Add this import for the chart
-
+import { BaseChartDirective } from 'ng2-charts';
+import { MaterialModule } from '../material.module';
 import { AuthService } from '../services/auth';
 import { DashboardService } from '../services/Dashboard';
 import { DashboardDto } from '../models/Dashboard';
@@ -10,7 +10,7 @@ import { DashboardDto } from '../models/Dashboard';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule], // <-- Add BaseChartDirective here
+  imports: [CommonModule, BaseChartDirective, MaterialModule],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })
@@ -21,28 +21,17 @@ export class DashboardComponent implements OnInit {
 
   public barChartData: ChartConfiguration<'bar'>['data'] | null = null;
   public barChartOptions: ChartConfiguration<'bar'>['options'] = {
-    responsive: true,
-    maintainAspectRatio: false,
-    scales: { y: { beginAtZero: true } }
+    responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } }
   };
 
-  constructor(
-    private authService: AuthService,
-    private dashboardService: DashboardService
-  ) {
+  constructor(private authService: AuthService, private dashboardService: DashboardService) {
     this.userId = this.authService.getUserId();
   }
 
-  ngOnInit(): void {
-    this.fetchDashboardData();
-  }
+  ngOnInit(): void { this.fetchDashboardData(); }
 
   fetchDashboardData(): void {
-    if (!this.userId) {
-      console.error('User ID not found, cannot fetch data.');
-      this.isLoading = false;
-      return;
-    }
+    if (!this.userId) { this.isLoading = false; return; }
     this.isLoading = true;
     this.dashboardService.getSummary(this.userId).subscribe({
       next: (data) => {
@@ -50,10 +39,7 @@ export class DashboardComponent implements OnInit {
         this.updateChart();
         this.isLoading = false;
       },
-      error: (err) => {
-        console.error('Failed to fetch dashboard summary', err);
-        this.isLoading = false;
-      }
+      error: (err) => { console.error('Failed to fetch dashboard summary', err); this.isLoading = false; }
     });
   }
 
@@ -61,19 +47,10 @@ export class DashboardComponent implements OnInit {
     if (!this.dashboardData) return;
     this.barChartData = {
       labels: ['Completed', 'Pending/Watching'],
-      datasets: [
-        {
-          // Corrected the typo
-          data: [this.dashboardData.completedItems, this.dashboardData.pendingItems],
-          label: 'Watchlist Status',
-          backgroundColor: ['#4CAF50', '#FFC107'],
-          borderRadius: 5
-        },
-      ],
+      datasets: [{
+        data: [this.dashboardData.completedItems, this.dashboardData.pendingItems],
+        label: 'Watchlist Status', backgroundColor: ['#3f51b5', '#ff4081'], borderRadius: 5
+      }],
     };
-  }
-
-  logout(): void {
-    this.authService.logout();
   }
 }

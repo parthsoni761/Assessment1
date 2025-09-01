@@ -7,20 +7,16 @@ using Microsoft.AspNetCore.Authorization;
 namespace ListWatch.Controllers
 {
     [ApiController]
-    // The base route is good
     [Route("api/WatchListItems")]
     [Authorize]
     public class WatchListController : ControllerBase
     {
         private readonly IWatchListService _service;
-        private readonly IMapper _mapper;
-        public WatchListController(IWatchListService service, IMapper mapper)
+        public WatchListController(IWatchListService service)
         {
             _service = service;
-            _mapper = mapper;
         }
 
-        // UPDATED: GET api/WatchListItems/user/{userId}?status=Completed&search=...
         [HttpGet("user/{userId}")]
         public async Task<ActionResult<IEnumerable<WatchListItemDto>>> GetAllByUserIdAsync(
             int userId,
@@ -29,20 +25,30 @@ namespace ListWatch.Controllers
             [FromQuery] string? type,
             [FromQuery] bool? isFavorite,
             [FromQuery] string? search,
-            [FromQuery] string? sortBy)
+            [FromQuery] string? sortColumn,
+            [FromQuery] string? sortDirection)
         {
-            var items = await _service.GetAllByUserIdAsync(userId, status, genre, type, isFavorite, search, sortBy);
+            var items = await _service.GetAllByUserIdAsync(userId, status, genre, type, isFavorite, search, sortColumn, sortDirection);
             return Ok(items);
         }
 
-        // This gets a single item by its own ID, which is standard REST practice
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetWatchlistItemById")]
         public async Task<ActionResult<WatchListItemDto>> GetByIdAsync(int id)
         {
             var item = await _service.GetByIdAsync(id);
             if (item == null) return NotFound();
             return Ok(item);
         }
+
+        // --- NEW ENDPOINT for toggling favorite ---
+        [HttpPatch("{id}/toggleFavorite")]
+        public async Task<IActionResult> ToggleFavorite(int id)
+        {
+            var success = await _service.ToggleFavoriteAsync(id);
+            if (!success) return NotFound();
+            return NoContent(); // Success, no content to return
+        }
+
         [HttpPost]
         public async Task<ActionResult<WatchListItemDto>> CreateAsync(CreateWatchListItemDto dto)
         {
