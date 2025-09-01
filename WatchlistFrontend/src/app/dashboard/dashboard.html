@@ -2,47 +2,60 @@
   <header><h1>Dashboard</h1></header>
 
   <div *ngIf="isLoading" class="loading-spinner">
-    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+    <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
   </div>
 
   <div class="dashboard-grid" *ngIf="!isLoading && dashboardData">
+    <!-- Summary Cards -->
     <mat-card class="summary-card">
-      <mat-card-header><mat-card-title>Total Items</mat-card-title></mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Total Items</mat-card-title>
+        <mat-card-subtitle>In Your Watchlist</mat-card-subtitle>
+      </mat-card-header>
       <mat-card-content><p>{{ dashboardData.totalItems }}</p></mat-card-content>
     </mat-card>
     <mat-card class="summary-card">
-      <mat-card-header><mat-card-title>Completed</mat-card-title></mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Completed</mat-card-title>
+        <mat-card-subtitle>Items Finished</mat-card-subtitle>
+      </mat-card-header>
       <mat-card-content><p>{{ dashboardData.completedItems }}</p></mat-card-content>
     </mat-card>
     <mat-card class="summary-card">
-      <mat-card-header><mat-card-title>Favorites</mat-card-title></mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Favorites</mat-card-title>
+        <mat-card-subtitle>Marked with a Star</mat-card-subtitle>
+      </mat-card-header>
       <mat-card-content><p>{{ dashboardData.favoriteItems }}</p></mat-card-content>
     </mat-card>
     <mat-card class="summary-card">
-      <mat-card-header><mat-card-title>Favorite Genre</mat-card-title></mat-card-header>
+      <mat-card-header>
+        <mat-card-title>Favorite Genre</mat-card-title>
+        <mat-card-subtitle>Your Top Category</mat-card-subtitle>
+      </mat-card-header>
       <mat-card-content><p>{{ dashboardData.favoriteGenre || 'N/A' }}</p></mat-card-content>
     </mat-card>
 
+    <!-- Chart Card -->
     <mat-card class="chart-card">
       <mat-card-header><mat-card-title>Status Overview</mat-card-title></mat-card-header>
-      <mat-card-content>
-        <canvas baseChart *ngIf="barChartData" [data]="barChartData" [options]="barChartOptions" type="bar"></canvas>
+      <mat-card-content class="chart-content">
+        <canvas baseChart *ngIf="doughnutChartData" [data]="doughnutChartData" [options]="doughnutChartOptions" type="doughnut"></canvas>
       </mat-card-content>
     </mat-card>
 
+    <!-- Top Rated Items Card -->
     <mat-card class="top-rated-card">
-      <mat-card-header><mat-card-title>Top 5 Rated Items</mat-card-title></mat-card-header>
+      <mat-card-header><mat-card-title>Top Rated Items</mat-card-title></mat-card-header>
       <mat-card-content>
-        <table>
-          <thead><tr><th>Title</th><th>Type</th><th>Rating</th></tr></thead>
-          <tbody>
-            <tr *ngFor="let item of dashboardData.topRatedItems">
-              <td>{{ item.title }}</td>
-              <td>{{ item.itemType }}</td>
-              <td>{{ item.rating.toFixed(1) }}</td>
-            </tr>
-          </tbody>
-        </table>
+        <mat-list>
+          <mat-list-item *ngFor="let item of dashboardData.topRatedItems">
+            <mat-icon matListItemIcon>movie</mat-icon>
+            <div matListItemTitle>{{ item.title }}</div>
+            <div matListItemLine>{{ item.itemType }}</div>
+            <span matListItemMeta  class="rating-badge">{{ item.rating.toFixed(1) }}</span>
+          </mat-list-item>
+        </mat-list>
       </mat-card-content>
     </mat-card>
   </div>

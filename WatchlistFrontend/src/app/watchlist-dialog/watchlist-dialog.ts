@@ -25,12 +25,16 @@ export class WatchlistDialogComponent implements OnInit {
     const item = data.item;
 
     this.itemForm = this.fb.group({
+      // --- THE FIX: Add userId to the FormGroup ---
+      userId: [item.userId], // This doesn't need validators as the user can't change it.
+
+      // All other form controls remain the same
       title: [item.title, [Validators.required, Validators.maxLength(100)]],
       itemType: [item.itemType, Validators.required],
       status: [item.status, Validators.required],
       releaseYear: [item.releaseYear, [Validators.required, Validators.min(1888), Validators.max(2099)]],
       genre: [item.genre],
-      rating: [item.rating, [Validators.required, Validators.min(0), Validators.max(10)]],
+      rating: [item.rating, [Validators.required, Validators.min(0), Validators.max(5)]],
       isFavorite: [item.isFavorite],
       completedEpisodes: [item.completedEpisodes],
       totalEpisodes: [item.totalEpisodes]
@@ -38,6 +42,7 @@ export class WatchlistDialogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // This logic does not need to change
     this.itemForm.get('itemType')?.valueChanges.subscribe(value => {
       const completedEpisodesControl = this.itemForm.get('completedEpisodes');
       const totalEpisodesControl = this.itemForm.get('totalEpisodes');

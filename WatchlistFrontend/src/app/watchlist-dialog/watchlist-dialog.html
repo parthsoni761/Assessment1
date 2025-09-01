@@ -1,6 +1,7 @@
 <h1 mat-dialog-title>{{ isEditing ? 'Edit Item' : 'Add New Item' }}</h1>
 <div mat-dialog-content>
   <form [formGroup]="itemForm" (ngSubmit)="onSave()">
+    <!-- ... title and type form fields are correct ... -->
     <mat-form-field appearance="outline" class="full-width">
       <mat-label>Title</mat-label>
       <input matInput formControlName="title" required>
@@ -15,47 +16,36 @@
           <mat-option value="TV Show">TV Show</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <!-- --- THE FIX IS IN THIS BLOCK --- -->
       <mat-form-field appearance="outline">
         <mat-label>Status</mat-label>
         <mat-select formControlName="status">
-          <mat-option>To Watch</mat-option><mat-option>Watching</mat-option>
-          <mat-option>Completed</mat-option><mat-option>On Hold</mat-option>
-          <mat-option>Dropped</mat-option>
+          <!-- Add an explicit value attribute to each option -->
+          <mat-option value="To Watch">To Watch</mat-option>
+          <mat-option value="Watching">Watching</mat-option>
+          <mat-option value="Completed">Completed</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
+    <!-- ... rest of the form is correct ... -->
     <div class="form-row" *ngIf="itemForm.get('itemType')?.value === 'TV Show'">
-      <mat-form-field appearance="outline">
-        <mat-label>Completed Episodes</mat-label>
-        <input matInput type="number" formControlName="completedEpisodes">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Total Episodes</mat-label>
-        <input matInput type="number" formControlName="totalEpisodes">
-      </mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Completed Episodes</mat-label><input matInput type="number" formControlName="completedEpisodes"></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Total Episodes</mat-label><input matInput type="number" formControlName="totalEpisodes"></mat-form-field>
     </div>
-
     <div class="form-row">
-      <mat-form-field appearance="outline">
-        <mat-label>Genre</mat-label>
-        <input matInput formControlName="genre">
-      </mat-form-field>
-      <mat-form-field appearance="outline">
-        <mat-label>Year</mat-label>
-        <input matInput type="number" formControlName="releaseYear">
-      </mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Genre</mat-label><input matInput formControlName="genre"></mat-form-field>
+      <mat-form-field appearance="outline"><mat-label>Year</mat-label><input matInput type="number" formControlName="releaseYear"></mat-form-field>
     </div>
-
     <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Your Rating (0-10)</mat-label>
-      <input matInput type="number" formControlName="rating" required>
+      <mat-label>Your Rating (0-5)</mat-label>
+      <input matInput type="number" formControlName="rating" required min="0" max="5">
       <mat-error *ngIf="itemForm.get('rating')?.hasError('required')">Rating is required.</mat-error>
       <mat-error *ngIf="itemForm.get('rating')?.hasError('min') || itemForm.get('rating')?.hasError('max')">
-        Rating must be a whole number between 0 and 10.
+        Rating must be a whole number between 0 and 5.
       </mat-error>
     </mat-form-field>
-
     <mat-checkbox formControlName="isFavorite">Mark as Favorite</mat-checkbox>
   </form>
 </div>

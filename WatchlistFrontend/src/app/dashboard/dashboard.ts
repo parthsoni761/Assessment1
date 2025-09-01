@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChartConfiguration } from 'chart.js';
+import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
 import { MaterialModule } from '../material.module';
 import { AuthService } from '../services/auth';
@@ -19,9 +19,12 @@ export class DashboardComponent implements OnInit {
   public userId: string | null;
   public isLoading = true;
 
-  public barChartData: ChartConfiguration<'bar'>['data'] | null = null;
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
-    responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } }
+  // Doughnut Chart Properties
+  public doughnutChartData: ChartConfiguration<'doughnut'>['data'] | null = null;
+  public doughnutChartOptions: ChartOptions<'doughnut'> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    cutout: '70%', // This creates the "doughnut" effect
   };
 
   constructor(private authService: AuthService, private dashboardService: DashboardService) {
@@ -45,11 +48,13 @@ export class DashboardComponent implements OnInit {
 
   updateChart(): void {
     if (!this.dashboardData) return;
-    this.barChartData = {
+    this.doughnutChartData = {
       labels: ['Completed', 'Pending/Watching'],
       datasets: [{
         data: [this.dashboardData.completedItems, this.dashboardData.pendingItems],
-        label: 'Watchlist Status', backgroundColor: ['#3f51b5', '#ff4081'], borderRadius: 5
+        backgroundColor: ['#3f51b5', '#ff4081'], // Primary and Accent theme colors
+        hoverBackgroundColor: ['#303f9f', '#f50057'],
+        borderWidth: 0,
       }],
     };
   }

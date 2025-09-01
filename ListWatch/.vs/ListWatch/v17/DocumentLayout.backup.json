@@ -3,16 +3,37 @@
   "WorkspaceRootPath": "D:\\new_prac\\latest-edition\\Assessment1\\ListWatch\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist\\watchlist.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist\\watchlist.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist\\watchlist.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\dashboard\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\dashboard\\dashboard.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\sidebar\\sidebar.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\sidebar\\sidebar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\dashboard\\dashboard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\sidebar\\sidebar.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\new_prac\\latest-edition\\assessment1\\watchlistfrontend\\src\\app\\watchlist\\watchlist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,59 +46,146 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "watchlist.ts",
-              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
-              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
-              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
-              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-01T21:30:23.194Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "watchlist-dialog.css",
-              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.css",
-              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.css",
-              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.css",
-              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-01T21:27:33.334Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "watchlist-dialog.html",
               "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.html",
               "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.html",
               "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.html",
               "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.html",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABoAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-01T21:27:23.282Z",
+              "WhenOpened": "2025-09-01T23:11:23.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "watchlist-dialog.ts",
               "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts",
               "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts",
               "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts",
               "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist-dialog\\watchlist-dialog.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-01T21:27:05.366Z",
+              "WhenOpened": "2025-09-01T23:11:03.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "watchlist.html",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T22:30:08.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "watchlist.ts",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T22:29:14.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "sidebar.html",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T22:08:59.737Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "sidebar.ts",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T22:05:04.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "sidebar.css",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACEAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T22:00:33.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "watchlist.css",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAmwFEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T21:50:44.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dashboard.css",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAmwGMAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T21:50:31.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "dashboard.html",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwDcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T21:50:18.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dashboard.ts",
+              "DocumentMoniker": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "ToolTip": "D:\\new_prac\\latest-edition\\Assessment1\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T21:49:50.538Z",
               "EditorCaption": ""
             }
           ]

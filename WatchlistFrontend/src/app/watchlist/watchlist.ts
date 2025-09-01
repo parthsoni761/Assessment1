@@ -2,9 +2,11 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSort } from '@angular/material/sort';
+
+import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 
+// Corrected import paths for robustness
 import { WatchlistService } from '../services/watchlist';
 import { AuthService } from '../services/auth';
 import { WatchlistItemDto, CreateWatchlistItemDto } from '../models/watchlist-item';
@@ -14,18 +16,19 @@ import { WatchlistDialogComponent } from '../watchlist-dialog/watchlist-dialog';
 @Component({
   selector: 'app-watchlist',
   standalone: true,
-  // --- FIX: WatchlistDialogComponent is removed from this array ---
-  imports: [CommonModule, FormsModule, MaterialModule],
+  imports: [CommonModule, FormsModule, MaterialModule, MatSortModule],
   templateUrl: './watchlist.html',
   styleUrls: ['./watchlist.css']
 })
 export class WatchlistComponent implements OnInit, AfterViewInit {
-  // ... the rest of your component logic remains exactly the same ...
-  public displayedColumns: string[] = ['isFavorite', 'title', 'itemType', 'genre', 'releaseYear', 'status', 'rating', 'actions'];
+  // --- THE FIX: Add 'progress' to this array to match the HTML ---
+  public displayedColumns: string[] = ['isFavorite', 'title', 'itemType', 'genre', 'releaseYear', 'status', 'progress', 'rating', 'actions'];
   public dataSource = new MatTableDataSource<WatchlistItemDto>();
   public isLoading = true;
   public userId: string | null;
+
   @ViewChild(MatSort) sort!: MatSort;
+
   public filters = { status: '', type: '', search: '' };
 
   constructor(
@@ -36,21 +39,33 @@ export class WatchlistComponent implements OnInit, AfterViewInit {
     this.userId = this.authService.getUserId();
   }
 
-  ngOnInit(): void { this.loadWatchlist(); }
+  ngOnInit(): void {
+    this.loadWatchlist();
+  }
 
   ngAfterViewInit(): void {
-    this.dataSource.sort = this.sort;
-    this.sort.sortChange.subscribe(() => this.loadWatchlist());
+    // This logic is correct for server-side sorting
+    this.sort.sortChange.subscribe(() => {
+      this.loadWatchlist();
+    });
   }
 
   loadWatchlist(): void {
     if (!this.userId) return;
+
     this.isLoading = true;
     const sortColumn = this.sort?.active || 'rating';
     const sortDirection = this.sort?.direction || 'desc';
+
     this.watchlistService.getItemsByUserId(this.userId, this.filters, sortColumn, sortDirection).subscribe({
-      next: (data) => { this.dataSource.data = data; this.isLoading = false; },
-      error: (err) => { console.error("Failed to load watchlist", err); this.isLoading = false; }
+      next: (data) => {
+        this.dataSource.data = data;
+        this.isLoading = false;
+      },
+      error: (err) => {
+        console.error("Failed to load watchlist", err);
+        this.isLoading = false;
+      }
     });
   }
 
