@@ -1,0 +1,47 @@
+﻿namespace ListWatch.DTOs
+{
+    public class WatchListItemDto
+    {
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public string Title { get; set; } = "";
+        public string ItemType { get; set; } = "";
+        public string Genre { get; set; } = "";
+        public int ReleaseYear { get; set; } 
+        public string Status { get; set; } = "To Watch";
+        public int Rating { get; set; }
+        public bool IsFavorite { get; set; }
+        public int? CompletedEpisodes { get; set; }
+        public int? TotalEpisodes { get;set; }
+
+    }
+
+    public class CreateWatchListItemDto
+    {
+        public int UserId { get; set; }
+        public string Title { get; set; } = "";
+        public string ItemType { get; set; } = "";
+        public string Genre { get; set; } = "";
+        public int ReleaseYear { get; set; } 
+        public string Status { get; set; } = "To Watch";
+        public int Rating { get; set; }
+        public bool IsFavorite { get; set; }
+
+        public int? CompletedEpisodes { get; set; }
+        public int? TotalEpisodes { get; set; }
+    }
+
+    public class UpdateWatchListItemDto
+    {
+        public string Title { get; set; }= "";
+        public string ItemType { get; set; }= "";
+        public string Genre { get; set; }= "";
+        public int ReleaseYear { get; set; }
+        public string Status { get; set; }= "";
+        public int Rating { get; set; }
+        public bool IsFavorite { get; set; }
+
+        public int? CompletedEpisodes { get; set; }
+        public int? TotalEpisodes { get; set; }
+    }
+}

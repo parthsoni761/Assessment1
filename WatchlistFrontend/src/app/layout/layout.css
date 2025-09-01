@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #f4f7fa;
+}
+
+.layout-container {
+  display: flex;
+  height: 100%;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* NEW: Wrapper for navbar and content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.navbar {
+  flex-shrink: 0; /* Prevents navbar from shrinking */
+}
+
+.main-content {
+  flex-grow: 1; /* Takes up remaining vertical space */
+  overflow-y: auto; /* IMPORTANT: Allows content to scroll */
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* For smaller laptops and tablets (e.g., iPad landscape) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px; /* A slightly smaller sidebar */
+  }
+}
+
+/* For tablets in portrait mode */
+@media (max-width: 768px) {
+  .sidebar {
+    /* On tablets, we hide the sidebar. A hamburger menu would be the next step. */
+    display: none;
+  }
+
+  .main-content {
+    width: 100%; /* The main content takes the full width */
+  }
+}

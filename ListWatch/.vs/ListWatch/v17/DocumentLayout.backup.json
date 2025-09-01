@@ -1,0 +1,566 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\auth\\signup\\signup.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\auth\\login\\login.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\auth\\auth.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\styles.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\watchlist\\watchlist.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\watchlist\\watchlist.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\watchlist\\watchlist.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:services\\dashboardservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\services\\watchlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:services\\watchlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\controllers\\watchlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:controllers\\watchlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\dashboard\\dashboard.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\navbar\\navbar.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\navbar\\navbar.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\services\\auth.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\layout\\layout.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\layout\\layout.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\layout\\layout.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\navbar\\navbar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\dashboard\\dashboard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\app-routing-module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\dashboard\\dashboard.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\auth\\login\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\services\\dashboard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\services\\watchlist.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\services\\iwatchlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:services\\iwatchlistservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|d:\\training-mvc\\assessment-backup\\assessment\\listwatch\\dtos\\watchlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{94529979-CB86-4C8F-9FB4-9454B668D067}|ListWatch.csproj|solutionrelative:dtos\\watchlistitemdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\app-module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|d:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\models\\watchlist-item.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\guards\\auth-guard.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\sidebar\\sidebar.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\sidebar\\sidebar.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D7C60E23-95E7-9BD2-E370-68A921AA51E7}|..\\WatchlistFrontend\\WatchlistFrontend.esproj|d:\\training-mvc\\assessment-backup\\assessment\\watchlistfrontend\\src\\app\\sidebar\\sidebar.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "signup.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\signup\\signup.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\auth\\signup\\signup.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\signup\\signup.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\auth\\signup\\signup.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T14:46:25.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "login.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\login\\login.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\auth\\login\\login.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\login\\login.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\auth\\login\\login.ts",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T14:46:03.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "auth.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\auth.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\auth\\auth.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\auth.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\auth\\auth.css",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAuwIwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T14:43:54.231Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "Mappings\\MappingProfile.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T14:25:36.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "watchlist.html",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.html",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAewFsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T10:01:46.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "watchlist.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.ts",
+              "ViewState": "AgIAABMAAAAAAAAAAAAswBsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:55:22.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "WatchListController.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Controllers\\WatchListController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WatchListController.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Controllers\\WatchListController.cs",
+              "RelativeToolTip": "Controllers\\WatchListController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAtwBgAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T10:28:56.069Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "watchlist.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\watchlist\\watchlist.css",
+              "ViewState": "AgIAACcAAAAAAAAAAAAuwDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T10:01:57.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "styles.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\styles.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\styles.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\styles.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\styles.css",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAuwKcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T11:20:37.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "dashboard.html",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T10:45:28.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DashboardService.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\DashboardService.cs",
+              "RelativeDocumentMoniker": "Services\\DashboardService.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\DashboardService.cs",
+              "RelativeToolTip": "Services\\DashboardService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T14:14:42.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "WatchListService.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\WatchListService.cs",
+              "RelativeDocumentMoniker": "Services\\WatchListService.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\WatchListService.cs",
+              "RelativeToolTip": "Services\\WatchListService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAAwEcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T10:26:46.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "auth.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\auth.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\services\\auth.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\auth.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\services\\auth.ts",
+              "ViewState": "AgIAACwAAAAAAAAAAIAwwDwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T12:41:16.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "layout.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\layout\\layout.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\layout\\layout.css",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T09:50:05.686Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "navbar.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.ts",
+              "ViewState": "AgIAAAsAAAAAAAAAAAApwBIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T12:40:47.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "navbar.html",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.html",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.html",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T12:42:20.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "layout.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\layout\\layout.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\layout\\layout.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:49:42.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "layout.html",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\layout\\layout.html",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\layout\\layout.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\layout\\layout.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T09:49:34.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "navbar.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\navbar\\navbar.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\navbar\\navbar.css",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAuwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T12:42:27.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "dashboard.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T10:39:26.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "dashboard.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\dashboard\\dashboard.css",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T11:22:38.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "app-routing-module.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\app-routing-module.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\app-routing-module.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\app-routing-module.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\app-routing-module.ts",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAswBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:53:04.741Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "login.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\login\\login.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\auth\\login\\login.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\auth\\login\\login.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\auth\\login\\login.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T11:24:59.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Dashboard.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\Dashboard.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\services\\Dashboard.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\Dashboard.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\services\\Dashboard.ts",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAnwA0AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T10:37:21.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "watchlist.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\watchlist.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\services\\watchlist.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\services\\watchlist.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\services\\watchlist.ts",
+              "ViewState": "AgIAAAwAAAAAAAAAAIA8wBcAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T10:00:22.414Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IWatchListService.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\IWatchListService.cs",
+              "RelativeDocumentMoniker": "Services\\IWatchListService.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\Services\\IWatchListService.cs",
+              "RelativeToolTip": "Services\\IWatchListService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAwBUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T10:26:30.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "WatchListItemDto.cs",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\DTOs\\WatchListItemDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\WatchListItemDto.cs",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\ListWatch\\DTOs\\WatchListItemDto.cs",
+              "RelativeToolTip": "DTOs\\WatchListItemDto.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAzwAYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-01T10:13:57.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "app-module.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\app-module.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\app-module.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\app-module.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\app-module.ts",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T10:03:03.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "watchlist-item.ts",
+              "DocumentMoniker": "d:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\models\\watchlist-item.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\models\\watchlist-item.ts",
+              "ToolTip": "d:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\models\\watchlist-item.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\models\\watchlist-item.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:59:58.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "auth-guard.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\guards\\auth-guard.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\guards\\auth-guard.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\guards\\auth-guard.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\guards\\auth-guard.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:52:33.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "sidebar.css",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-09-01T09:51:00.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "sidebar.html",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-01T09:50:42.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "sidebar.ts",
+              "DocumentMoniker": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "RelativeDocumentMoniker": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "ToolTip": "D:\\training-mvc\\Assessment-backup\\Assessment\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "RelativeToolTip": "..\\WatchlistFrontend\\src\\app\\sidebar\\sidebar.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-01T09:50:35.067Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

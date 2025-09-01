@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "ListWatch.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "..\\WatchlistFrontend\\WatchlistFrontend.esproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

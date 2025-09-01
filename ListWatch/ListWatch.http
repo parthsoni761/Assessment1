@@ -1,0 +1,6 @@
+@ListWatch_HostAddress = http://localhost:5108
+
+GET {{ListWatch_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
