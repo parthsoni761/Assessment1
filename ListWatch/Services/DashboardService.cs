@@ -67,8 +67,8 @@ namespace ListWatch.Services
 
             // Summary calculations
             var totalItems = items.Count;
-            var completed = items.Count(i => i.Status == "completed");
-            var pending = items.Count(i => i.Status != "completed");
+            var completed = items.Count(i => i.Status.Equals("completed", StringComparison.OrdinalIgnoreCase));
+            var pending = items.Count(i => !i.Status.Equals("completed", StringComparison.OrdinalIgnoreCase));
             var favorites = items.Count(i => i.IsFavorite);
 
             var favoriteGenre = items

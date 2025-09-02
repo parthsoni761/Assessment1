@@ -1,0 +1,11 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.username {
+  margin: 0 8px;
+}
+
+.navbar-toolbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}

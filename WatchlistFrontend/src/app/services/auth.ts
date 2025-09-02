@@ -47,7 +47,19 @@ export class AuthService {
   public getAccessToken(): string | null {
     return localStorage.getItem('access_token');
   }
+  public getUsername(): string | null {
+    const token = this.getAccessToken();
+    if (!token) return null;
 
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      // 'unique_name' is the claim your .NET backend is using for the username
+      return payload.unique_name;
+    } catch (e) {
+      console.error('Error decoding token for username', e);
+      return null;
+    }
+  }
   public getUserId(): string | null {
     const token = this.getAccessToken();
     if (!token) {

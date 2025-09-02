@@ -1,0 +1,16 @@
+<mat-toolbar color="primary" class="navbar-toolbar">
+  <div class="spacer"></div>
+
+  <button mat-button [matMenuTriggerFor]="userMenu">
+    <mat-icon>account_circle</mat-icon>
+    <span class="username">{{ username || 'User' }}</span>
+    <mat-icon>arrow_drop_down</mat-icon>
+  </button>
+
+  <mat-menu #userMenu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>

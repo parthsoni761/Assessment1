@@ -1,0 +1,81 @@
+.watchlist-container {
+  padding: 32px;
+  background-color: #fafafa;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+  header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 300;
+    color: #212121;
+  }
+
+.filters-panel {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+  .filters-panel mat-form-field {
+    flex: 1 1 200px; /* Flexbox for responsive filter fields */
+  }
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.table-container {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Table Header Styling */
+.mat-mdc-header-cell {
+  background-color: #f5f5f5;
+  color: #212121;
+  font-weight: 500;
+}
+
+/* Table Row Styling */
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #eeeeee;
+}
+
+.mat-mdc-row, .mat-mdc-header-row {
+  height: 58px; /* Increase row height for more space */
+}
+
+.mat-mdc-cell {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: #e0e0e0;
+}
+
+/* Favorite Star Styling */
+button[color="accent"] mat-icon {
+  color: #ffc107;
+  transition: transform 0.2s ease-in-out;
+}
+
+button[color="accent"]:hover mat-icon {
+  transform: scale(1.2);
+}
+
+/* Action Buttons */
+td .mdc-button--stroked {
+  margin-right: 8px;
+}

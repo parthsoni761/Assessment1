@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ListWatch.Services;
 using ListWatch.DTOs;
-using ListWatch.Models;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 
@@ -12,54 +11,63 @@ namespace ListWatch.Controllers
     [Authorize]
     public class WatchListController : ControllerBase
     {
-        private readonly IWatchListService _Service;
-        private readonly IMapper _mapper;
-        public WatchListController(IWatchListService Service, IMapper mapper)
+        private readonly IWatchListService _service;
+        public WatchListController(IWatchListService service)
         {
-            _Service = Service;
-            _mapper = mapper;
+            _service = service;
         }
 
-        // get:- api/WatchListItems
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<WatchListItemDto>>> GetAllAsync()
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<WatchListItemDto>>> GetAllByUserIdAsync(
+            int userId,
+            [FromQuery] string? status,
+            [FromQuery] string? genre,
+            [FromQuery] string? type,
+            [FromQuery] bool? isFavorite,
+            [FromQuery] string? search,
+            [FromQuery] string? sortColumn,
+            [FromQuery] string? sortDirection)
         {
-            var items = await _Service.GetAllAsync();
+            var items = await _service.GetAllByUserIdAsync(userId, status, genre, type, isFavorite, search, sortColumn, sortDirection);
             return Ok(items);
         }
 
-        // get:- api/WatchListItems/1
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetWatchlistItemById")]
         public async Task<ActionResult<WatchListItemDto>> GetByIdAsync(int id)
         {
-            var item = await _Service.GetByIdAsync(id);
+            var item = await _service.GetByIdAsync(id);
             if (item == null) return NotFound();
             return Ok(item);
         }
 
-        // post:- api/WatchListItems
+        // --- NEW ENDPOINT for toggling favorite ---
+        [HttpPatch("{id}/toggleFavorite")]
+        public async Task<IActionResult> ToggleFavorite(int id)
+        {
+            var success = await _service.ToggleFavoriteAsync(id);
+            if (!success) return NotFound();
+            return NoContent(); // Success, no content to return
+        }
+
         [HttpPost]
         public async Task<ActionResult<WatchListItemDto>> CreateAsync(CreateWatchListItemDto dto)
         {
-            var createdItem = await _Service.CreateAsync(dto);
+            var createdItem = await _service.CreateAsync(dto);
             return Ok(createdItem);
         }
 
-        // put:- api/WatchListItems/1
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, UpdateWatchListItemDto dto)
+        public async Task<IActionResult> UpdateAsync(int id, UpdateWatchListItemDto dto)
         {
-            var updated = await _Service.UpdateAsync(id, dto);
+            var updated = await _service.UpdateAsync(id, dto);
             if (!updated) return NotFound();
-
             return NoContent();
         }
 
-        // delete:- api/WatchListItems/1
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
-            var deleted = await _Service.DeleteAsync(id);
+            var deleted = await _service.DeleteAsync(id);
             if (!deleted) return NotFound();
             return NoContent();
         }

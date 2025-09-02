@@ -1,80 +1,61 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ChartConfiguration } from 'chart.js';
-// FIX: Removed the extra '}' at the end of this line
-
+import { ChartConfiguration, ChartOptions } from 'chart.js';
+import { BaseChartDirective } from 'ng2-charts';
+import { MaterialModule } from '../material.module';
 import { AuthService } from '../services/auth';
-// FIX: Use lowercase 'dashboard.service' to match the renamed file
 import { DashboardService } from '../services/Dashboard';
-// FIX: Use lowercase 'dashboard' to match the renamed file
-import { DashboardDto } from '../models/dashboard';
+import { DashboardDto } from '../models/Dashboard';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, BaseChartDirective, MaterialModule],
   templateUrl: './dashboard.html',
   styleUrls: ['./dashboard.css']
 })
 export class DashboardComponent implements OnInit {
-  // The rest of your component file was correct and needs no changes.
   public dashboardData: DashboardDto | null = null;
   public userId: string | null;
   public isLoading = true;
 
-  public filters = { status: '', genre: '', type: '', isFavorite: '', search: '', sortBy: 'rating' };
-
-  public barChartData: ChartConfiguration<'bar'>['data'] | null = null;
-  public barChartOptions: ChartConfiguration<'bar'>['options'] = {
+  // Doughnut Chart Properties
+  public doughnutChartData: ChartConfiguration<'doughnut'>['data'] | null = null;
+  public doughnutChartOptions: ChartOptions<'doughnut'> = {
     responsive: true,
     maintainAspectRatio: false,
-    scales: { y: { beginAtZero: true } }
+    cutout: '70%', // This creates the "doughnut" effect
   };
 
-  constructor(
-    private authService: AuthService,
-    private dashboardService: DashboardService
-  ) {
+  constructor(private authService: AuthService, private dashboardService: DashboardService) {
     this.userId = this.authService.getUserId();
   }
 
   ngOnInit(): void { this.fetchDashboardData(); }
 
   fetchDashboardData(): void {
-    if (!this.userId) {
-      console.error('User ID not found, cannot fetch data.');
-      this.isLoading = false;
-      return;
-    }
+    if (!this.userId) { this.isLoading = false; return; }
     this.isLoading = true;
-    this.dashboardService.getSummary(this.userId, this.filters).subscribe({
+    this.dashboardService.getSummary(this.userId).subscribe({
       next: (data) => {
         this.dashboardData = data;
         this.updateChart();
         this.isLoading = false;
       },
-      error: (err) => {
-        console.error('Failed to fetch dashboard summary', err);
-        this.isLoading = false;
-      }
+      error: (err) => { console.error('Failed to fetch dashboard summary', err); this.isLoading = false; }
     });
   }
 
   updateChart(): void {
     if (!this.dashboardData) return;
-    this.barChartData = {
+    this.doughnutChartData = {
       labels: ['Completed', 'Pending/Watching'],
-      datasets: [
-        {
-          data: [this.dashboardData.completedItems, this.dashboardData.pendingItems],
-          label: 'Watchlist Status',
-          backgroundColor: ['#4CAF50', '#FFC107'],
-          borderRadius: 5
-        },
-      ],
+      datasets: [{
+        data: [this.dashboardData.completedItems, this.dashboardData.pendingItems],
+        backgroundColor: ['#3f51b5', '#ff4081'], // Primary and Accent theme colors
+        hoverBackgroundColor: ['#303f9f', '#f50057'],
+        borderWidth: 0,
+      }],
     };
   }
-
-  logout(): void { this.authService.logout(); }
 }

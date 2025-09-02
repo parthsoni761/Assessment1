@@ -1,0 +1,11 @@
+.layout-container {
+  height: 100vh;
+}
+
+.sidebar-sidenav {
+  width: 260px;
+}
+
+.layout-content {
+  background-color: #fafafa;
+}

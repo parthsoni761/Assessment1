@@ -1,3 +1,22 @@
+/* In src/styles.css */
+
+/* Reset default browser styles and set a baseline */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevents accidental horizontal scrollbars */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f0f2f5; /* A light, neutral background for the whole app */
+}
+
+/* Make the root Angular component take up all available space */
+app-root, app-layout {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
 /* ========================================= */
 /* Global Styles for Auth Pages              */
 /* ========================================= */
@@ -146,3 +165,6 @@ button[type="submit"] {
       font-size: 24px;
     }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

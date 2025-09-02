@@ -1,0 +1,55 @@
+:host, .sidebar-container {
+  height: 100%;
+}
+
+.sidebar-container {
+  background-color: #1a202c; /* The dark background */
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header: Make the title pure white for prominence */
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #2d3748;
+}
+
+  .sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+
+/* --- THE FIX for Links and Icons --- */
+a[mat-list-item] {
+  /* Use a much lighter, more readable grey for inactive links */
+  color: #cbd5e0;
+}
+
+  a[mat-list-item] mat-icon {
+    /* Make the icon color match the text */
+    color: #cbd5e0;
+  }
+
+  /* Hover state remains the same, as it has good contrast */
+  a[mat-list-item]:hover {
+    background-color: #2d3748;
+    color: #ffffff;
+  }
+
+    a[mat-list-item]:hover mat-icon {
+      color: #ffffff;
+    }
+
+  /* Active state is perfect, keep it */
+  a[mat-list-item].active-link {
+    background-color: #4299e1;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+    a[mat-list-item].active-link mat-icon {
+      color: #ffffff;
+    }

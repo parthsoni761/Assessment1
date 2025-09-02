@@ -1,21 +1,37 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-// Make sure these paths and component names are correct
 import { LoginComponent } from './auth/login/login';
 import { SignupComponent } from './auth/signup/signup';
+import { LayoutComponent } from './layout/layout';
 import { DashboardComponent } from './dashboard/dashboard';
+import { WatchlistComponent } from './watchlist/watchlist';
+import { authGuard } from './guards/auth-guard';
 
-// This is the routes array you were trying to import directly
 const routes: Routes = [
+  // Public routes, accessible without logging in
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  // Protected routes, all nested under the main app layout
+  {
+    path: 'app', // All main app routes will be like /app/dashboard
+    component: LayoutComponent,
+    canActivate: [authGuard], // This guard protects all child routes
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'watchlist', component: WatchlistComponent },
+      // Default route for a logged-in user
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
+    ]
+  },
+
+  // Fallback routes
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Default route for the whole app
+  { path: '**', redirectTo: '/login' } // Wildcard route for any other path
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule] // This exports RouterModule so <router-outlet> works
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

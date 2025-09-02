@@ -39,6 +39,7 @@
               "src/favicon.ico" // Typically, favicon is in src
             ],
             "styles": [
+              "src/custom-theme.scss",
               "src/styles.css"
             ],
             "scripts": [] // Add if you have any global scripts
