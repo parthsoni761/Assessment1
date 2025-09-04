@@ -11,7 +11,7 @@ import { RegisterDto, LoginDto, AuthResponseDto } from '../models/auth';
 })
 export class AuthService {
 
-  // This base URL will be proxied to your backend (e.g., https://localhost:7069/api/Auth)
+  // The base URL 
   private readonly apiUrl = '/api/Auth';
 
   constructor(private http: HttpClient, private router: Router) { }

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { MaterialModule } from '../../material.module'; // <-- Import MaterialModule
-import { AuthService } from '../../services/auth';
+import { AuthService } from '../../services/auth.service';
 import { RegisterDto } from '../../models/auth';
 
 @Component({

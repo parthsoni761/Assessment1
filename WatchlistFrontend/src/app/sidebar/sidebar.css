@@ -1,15 +1,31 @@
-:host, .sidebar-container {
-  height: 100%;
+/* ==========================
+   GLOBAL LAYOUT
+   ========================== */
+:host {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }
 
 .sidebar-container {
-  background-color: #1a202c; /* The dark background */
+  background-color: #1a202c;
   color: #e2e8f0;
   display: flex;
   flex-direction: column;
+  width: 240px; /* desktop width */
+  transition: all 0.3s ease;
 }
 
-/* Header: Make the title pure white for prominence */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+/* ==========================
+   SIDEBAR
+   ========================== */
 .sidebar-header {
   padding: 20px;
   text-align: center;
@@ -22,18 +38,15 @@
     color: #ffffff;
   }
 
-/* --- THE FIX for Links and Icons --- */
+/* Links */
 a[mat-list-item] {
-  /* Use a much lighter, more readable grey for inactive links */
   color: #cbd5e0;
 }
 
   a[mat-list-item] mat-icon {
-    /* Make the icon color match the text */
     color: #cbd5e0;
   }
 
-  /* Hover state remains the same, as it has good contrast */
   a[mat-list-item]:hover {
     background-color: #2d3748;
     color: #ffffff;
@@ -43,7 +56,6 @@ a[mat-list-item] {
       color: #ffffff;
     }
 
-  /* Active state is perfect, keep it */
   a[mat-list-item].active-link {
     background-color: #4299e1;
     color: #ffffff;
@@ -53,3 +65,77 @@ a[mat-list-item] {
     a[mat-list-item].active-link mat-icon {
       color: #ffffff;
     }
+
+/* Tablet adjustments */
+@media (max-width: 992px) {
+  .sidebar-container {
+    width: 200px;
+  }
+}
+
+/* Mobile (compact sidebar with icons only) */
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 72px; /* compact */
+    align-items: center;
+  }
+
+  /* Keep header space, hide text */
+  .sidebar-header {
+    padding: 16px 0;
+    border-bottom: 1px solid #2d3748;
+  }
+
+    .sidebar-header h3 {
+      font-size: 0;
+      line-height: 0;
+      visibility: hidden;
+    }
+
+  mat-nav-list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  a[mat-list-item] {
+    justify-content: center;
+    padding: 16px 0;
+  }
+
+    a[mat-list-item] mat-icon {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    a[mat-list-item] span {
+      display: none; /* hide text labels */
+    }
+}
+
+/* ==========================
+   HEADER (inside main content)
+   ========================== */
+header.header-container {
+  display: flex;
+  justify-content: space-between; /* title left, actions right */
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+  header.header-container h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}

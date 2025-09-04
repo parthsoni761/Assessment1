@@ -4,6 +4,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
@@ -30,6 +32,8 @@ import { WatchlistDialogComponent } from './watchlist-dialog/watchlist-dialog';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule,   // ✅ Required for mat-dialog
+    MatButtonModule,
 
     // App-specific Modules
     AppRoutingModule,

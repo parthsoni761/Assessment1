@@ -53,10 +53,41 @@
             <mat-icon matListItemIcon>movie</mat-icon>
             <div matListItemTitle>{{ item.title }}</div>
             <div matListItemLine>{{ item.itemType }}</div>
-            <span matListItemMeta  class="rating-badge">{{ item.rating.toFixed(1) }}</span>
+            <span matListItemMeta class="rating-badge">{{ item.rating }}/5</span>
           </mat-list-item>
         </mat-list>
       </mat-card-content>
     </mat-card>
+    <!-- Add this new mat-card inside the .dashboard-grid, after the top-rated-card -->
+    <mat-card class="popular-card">
+      <mat-card-title class="popular-title">Popular Picks</mat-card-title>
+      <mat-divider></mat-divider>
+
+      <div class="popular-list">
+        <div class="popular-item" *ngFor="let item of popularItems">
+          <!-- Icon -->
+          <mat-icon class="item-icon">
+            {{ item.itemType === 'Movie' ? 'movie' : 'tv' }}
+          </mat-icon>
+
+          <!-- Title + Year -->
+          <div class="item-info">
+            <span class="item-title">{{ item.title }}</span>
+            <span class="item-year">{{ item.releaseYear }}</span>
+          </div>
+
+          <!-- Add button -->
+          <button mat-icon-button
+                  color="primary"
+                  aria-label="Add to Watchlist"
+                  (click)="addToWatchlist(item)">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card>
+
+
+
   </div>
 </div>

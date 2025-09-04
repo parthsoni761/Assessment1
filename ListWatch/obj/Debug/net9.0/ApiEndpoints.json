@@ -95,6 +95,32 @@
   },
   {
     "ContainingType": "ListWatch.Controllers.DashboardController",
+    "Method": "GetPopular",
+    "RelativePath": "api/Dashboard/popular",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ListWatch.Controllers.DashboardController",
+    "Method": "Search",
+    "RelativePath": "api/Dashboard/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ListWatch.Controllers.DashboardController",
     "Method": "GetSummary",
     "RelativePath": "api/Dashboard/summary/{userId}",
     "HttpMethod": "GET",
@@ -105,36 +131,6 @@
         "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
-      },
-      {
-        "Name": "status",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "genre",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "type",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "isFavorite",
-        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      },
-      {
-        "Name": "search",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "sortBy",
-        "Type": "System.String",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": [

@@ -1,16 +1,79 @@
 <mat-toolbar color="primary" class="navbar-toolbar">
-  <div class="spacer"></div>
+  <!-- Brand/Logo on the left -->
+  <span class="navbar-brand" style="color:white;"></span>
 
-  <button mat-button [matMenuTriggerFor]="userMenu">
-    <mat-icon>account_circle</mat-icon>
-    <span class="username">{{ username || 'User' }}</span>
-    <mat-icon>arrow_drop_down</mat-icon>
-  </button>
+  <!-- Container for all right-hand side elements -->
+  <div class="right-side">
 
-  <mat-menu #userMenu="matMenu">
-    <button mat-menu-item (click)="logout()">
-      <mat-icon>exit_to_app</mat-icon>
-      <span>Logout</span>
+    <!--
+      THE SEARCH BAR and RESULTS TRIGGER
+      The <div> is the trigger. [matMenuTriggerFor]="searchMenu" tells this container
+      to open the <mat-menu> named 'searchMenu' when it's interacted with.
+    -->
+    <div class="search-container" style="top:12px; left:-20px" >
+      <mat-form-field appearance="outline" class="search-field"[matMenuTriggerFor]="searchMenu">
+        <mat-label>Search for content...</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput [formControl]="searchControl" autocomplete="off">
+      </mat-form-field>
+    </div>
+
+    <!-- User Menu -->
+    <button mat-button [matMenuTriggerFor]="userMenu" style="width:220px">
+      <mat-icon>account_circle</mat-icon>
+      <span class="username">{{ username || 'User' }}</span>
+      <mat-icon>arrow_drop_down</mat-icon>
     </button>
-  </mat-menu>
+  </div>
 </mat-toolbar>
+
+<!--
+  THE "PLACE" FOR SEARCH RESULTS
+  This mat-menu is hidden by default. It is the dropdown panel that will appear
+  below the search bar.
+-->
+<mat-menu #searchMenu="matMenu" class="search-results-menu" style="width:400px;">
+  <!-- This wrapper prevents the menu from closing when you click inside it -->
+  <div (click)="$event.stopPropagation()">
+
+    <!-- Show a spinner while the API call is in progress -->
+    <div *ngIf="isSearchLoading" class="spinner-container">
+      <mat-progress-spinner mode="indeterminate" diameter="30"></mat-progress-spinner>
+    </div>
+
+    <!-- Show the list of results when loading is complete -->
+    <mat-list *ngIf="!isSearchLoading">
+      <mat-list-item *ngFor="let result of searchResults" class="search-result-item">
+  <div class="result-content">
+    <mat-icon class="result-icon">
+      {{ result.itemType === 'Movie' ? 'movie' : 'tv' }}
+    </mat-icon>
+
+    <div class="result-text">
+      <div class="result-title">{{ result.title }}</div>
+      <div class="result-year">{{ result.releaseYear }}</div>
+    </div>
+
+    <button mat-icon-button class="add-btn" (click)="addToWatchlist(result)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</mat-list-item>
+
+      <!-- No results -->
+      <!--<mat-list-item *ngIf="searchResults.length === 0 && searchControl.value?.length > 1">
+        <div matListItemTitle>No results found for "{{ searchControl.value }}".</div>
+      </mat-list-item>-->
+
+    </mat-list>
+
+  </div>
+</mat-menu>
+
+<!-- User Menu Dropdown (no changes needed) -->
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-menu>

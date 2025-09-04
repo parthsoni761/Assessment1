@@ -17,6 +17,17 @@ mat-checkbox {
 [mat-dialog-content] mat-form-field {
   margin-bottom: 0;
 }
-error-message {
-    margin:2px;
+
+[mat-dialog-content] form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+[mat-dialog-actions] {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 16px 24px;
+  border-top: 1px solid #e0e0e0;
 }

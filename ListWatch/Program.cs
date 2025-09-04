@@ -24,6 +24,9 @@ namespace ListWatch
             builder.Services.AddScoped<IDashboardService, DashboardService>();
             builder.Services.AddScoped<ITokenService, TokenService>();
             builder.Services.AddScoped<IPasswordService, PasswordService>();
+            builder.Services.AddHttpClient();
+            builder.Services.AddScoped<IExternalApiService, ExternalApiService>();
+
 
             // JWT Authentication
             var jwtKey = builder.Configuration["Jwt:Key"]!;
