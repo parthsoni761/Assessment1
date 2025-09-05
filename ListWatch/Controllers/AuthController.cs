@@ -58,7 +58,7 @@ namespace ListWatch.Controllers
             if (user == null) return Unauthorized("Invalid credentials.");
 
             if (!_passwords.Verify(user, dto.Password, user.PasswordHash))
-                return Unauthorized("Invalid credentials.");
+                return Unauthorized("Invalid credentials.pass");
 
             // Reuse the newest active refresh token if you prefer (optional)
             var active = user.RefreshTokens.LastOrDefault(rt => rt.IsActive);

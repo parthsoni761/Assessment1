@@ -52,7 +52,7 @@ namespace ListWatch.Services
 
         public RefreshToken CreateRefreshToken(out DateTime expiresAtUtc)
         {
-            var days = int.Parse(_config["Jwt:RefreshTokenDays"] ?? "7");
+            var days = int.Parse(_config["Jwt:RefreshTokenDays"] ?? "1");
             expiresAtUtc = DateTime.UtcNow.AddDays(days);
 
             var tokenBytes = RandomNumberGenerator.GetBytes(64);
