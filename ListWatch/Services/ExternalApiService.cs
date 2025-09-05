@@ -74,7 +74,7 @@ namespace ListWatch.Services
                     ReleaseYear = !string.IsNullOrEmpty(result.Year) && result.Year.Length >= 4 && int.TryParse(result.Year.AsSpan(0, 4), out var year)
                                   ? year
                                   : null,
-                    Genre = "N/A"
+                    Genre = " "
                 });
         }
 
